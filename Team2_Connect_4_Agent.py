@@ -1,4 +1,4 @@
-#! /usr/bin/Team6_Connect_4_Agent.py
+#! /usr/bin/Team2_Connect_4_Agent.py 
 
 # IMPORTS
 import random
@@ -35,17 +35,44 @@ def init_agent(player_symbol, board_num_rows, board_num_cols, board):
 def what_is_your_move(board, game_rows, game_cols, my_game_symbol):
    """ Decide your move, i.e., which column to drop a disk. """
 
-   valid_columns = []
-   for col in range(game_cols):
-       if board[0][col] == ' ':  # Check if top cell is empty
-           valid_columns.append(col + 1)  # +1 for 1-based indexing
-   if not valid_columns:
-       return 1  # fallback
-   return random.choice(valid_columns)
+   # Insert your agent code HERE to decide which column to drop/insert your disk.
+
+   return random.randint(1, game_cols)
+
+
+
+def connect_4_result(board, winner, looser):
+    """The Connect 4 manager calls this function when the game is over.
+    If there is a winner, the team name of the winner and looser are the
+    values of the respective argument variables. If there is a draw/tie,
+    the values of winner = looser = 'Draw'."""
+
+    # Check if a draw
+    if winner == "Draw":
+        print(">>> I am player TEAM2 <<<")
+        print(">>> The game resulted in a draw. <<<\n")
+        return True
+
+    print(">>> I am player TEAM2 <<<")
+    print("The winner is " + winner)
+    if winner == "Team2":
+        print("YEAH!!  :-)")
+    else:
+        print("BOO HOO HOO  :~(")
+    print("The looser is " + looser)
+    print()
+
+    # print("The final board is")   # Uncomment if you want to print the game board.
+    # print(board)  # Uncomment if you want to print the game board.
+
+    # Insert your code HERE to do whatever you like with the arguments.
+
+    return True
+
 
 #####
 # MAKE SURE MODULE IS IMPORTED
 if __name__ == "__main__":
-   print("Team6_Connect_4_Agent.py  is intended to be imported and not executed.")
+   print("Team2_Connect_4_Agent.py  is intended to be imported and not executed.") 
 else:
-   print("Team6_Connect_4_Agent.py  has been imported.")
+   print("Team2_Connect_4_Agent.py  has been imported.")
