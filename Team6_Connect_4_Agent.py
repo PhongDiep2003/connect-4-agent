@@ -382,6 +382,6 @@ def connect_4_result(board, winner, looser):
 #####
 # MAKE SURE MODULE IS IMPORTED
 if __name__ == "__main__":
-    print("Enhanced_Connect_4_Agent.py is intended to be imported and not executed.")
+    print("Team6_Connect_4_Agent.py is intended to be imported and not executed.")
 else:
-    print("Enhanced_Connect_4_Agent.py has been imported.")
+    print("Team6_Connect_4_Agent.py has been imported.")
