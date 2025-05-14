@@ -42,8 +42,8 @@ def undo_piece(board, row, col):
 
 def is_win_for(board, symbol):
     """Contributors:
-    - Jaydev Patel (90%, core algorithm structure)
-    - Phong Diep  (10%, optimized check pattern)
+    - Jaydev Patel (60%, core algorithm structure)
+    - Phong Diep  (40%, optimized check pattern)
     Representation/Reasoning Logic: Checks if the given symbol has four in a row on the board.
     Scans horizontally, vertically, and both diagonal directions for a win."""
     rows = len(board)
@@ -78,9 +78,9 @@ def is_win_for(board, symbol):
 # REASONING LOGIC – Heuristic evaluation of board states
 def evaluate_window(window, my_symbol, opp_symbol):
     """Contributors:
-    - Jaydev Patel (80%, core evaluation logic)
-    - Miguel Viray (15%, improved threat detection)
-    - Ziming Wang (5%, scoring adjustments)
+    - Jaydev Patel (50%, core evaluation logic)
+    - Miguel Viray (25%, improved threat detection)
+    - Ziming Wang (25%, scoring adjustments)
     Reasoning Logic: Scores a window of four cells for the heuristic evaluation.
     Awards points for windows that are favorable to my_symbol and penalizes ones favorable to opp_symbol."""
     score = 0
@@ -99,9 +99,9 @@ def evaluate_window(window, my_symbol, opp_symbol):
 
 def evaluate_board(board, my_symbol, opp_symbol):
     """Contributors:
-    - Jaydev Patel (80%, board evaluation structure)
-    - Miguel Viray (15%, improved center column evaluation)
-    - Ziming Wang (5%, diagonal weighting adjustment)
+    - Jaydev Patel (40%, board evaluation structure)
+    - Miguel Viray (30%, improved center column evaluation)
+    - Ziming Wang (30%, diagonal weighting adjustment)
     Reasoning Logic: Heuristic evaluation function for the board state from the perspective of my_symbol.
     Returns a numeric score where higher is better for my_symbol."""
     rows = len(board)
@@ -154,9 +154,9 @@ def evaluate_board(board, my_symbol, opp_symbol):
 # SEARCH LOGIC – Minimax with Alpha-Beta Pruning
 def alpha_beta_search(board, depth, alpha, beta, maximizing_player, my_symbol, opp_symbol):
     """Contributors:
-    - Jaydev Patel (80%, core minimax structure)
-    - Phong Diep  (10%, improved terminal condition handling)
-    - Ziming Wang (10%, alpha-beta pruning optimizations)
+    - Jaydev Patel (50%, core minimax structure)
+    - Phong Diep  (30%, alpha-beta pruning optimizations)
+    - Ziming Wang (20%, improved terminal condition handling)
     Search Logic: Minimax algorithm with Alpha-Beta pruning.
     Recursively evaluates moves up to a given depth and returns the heuristic score of the board.
     Uses alpha (best score for maximizer so far) and beta (best for minimizer) to prune branches."""
@@ -261,10 +261,10 @@ def init_agent(player_symbol, board_num_rows, board_num_cols, board):
 
 def what_is_your_move(board, game_rows, game_cols, my_game_symbol):
     """Contributors:
-    - Jaydev Patel (85%, core decision logic and rule-based checks)
-    - Phong Diep  (5%, win/block detection)
-    - Ziming Wang (5%, move ordering enhancements)
-    - Miguel Viray (5%, variable search depth)
+    - Jaydev Patel (40%, core decision logic and rule-based checks)
+    - Phong Diep  (20%, win/block detection)
+    - Ziming Wang (15%, move ordering enhancements)
+    - Miguel Viray (25%, variable search depth)
     Decide and return the next move (column number) for the agent.
     Applies rule-based reasoning for immediate wins/blocks, then uses Alpha-Beta search for the best move.
     Returns a column index in 1..game_cols (inclusive) to drop a disk."""
