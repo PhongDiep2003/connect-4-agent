@@ -1,13 +1,12 @@
-#! /usr/bin/MV_Connect_4_Agent.py
+#agent M
 
 # IMPORTS
-import random
 import math
 
 # DEFINITIONS
 # Global variables
 EMPTY = ' '
-MAX_DEPTH = 12  # Increased depth since there are no constraints
+MAX_DEPTH = 5  #balance between depth and efficiency
 # Standard Connect 4 board dimensions
 ROWS = 6
 COLS = 7
